@@ -12,7 +12,8 @@ it is possible to remove this need by using `default()` when adding a command:
     command = GreetCommand()
 
     app = Application()
-    app.add(command.default())
+    app.add(command)
+    app.set_default_command("greet", is_single_command=True)
 
     # this now executes the 'GreetCommand' without passing its name
     app.run()
